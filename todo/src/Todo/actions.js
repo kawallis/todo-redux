@@ -1,8 +1,16 @@
-import {ADD_TODO, REMOVE_TODO} from './constants';
-
+import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO} from './constants';
+let nextTodoId = 0;
 export function addTodo(payload = 'go to laundry mat') {
   return {
     type: ADD_TODO,
+    id: nextTodoId++,
+    payload
+  };
+}
+
+export function toggleTodo(payload) {
+  return {
+    type: TOGGLE_TODO,
     payload
   };
 }
