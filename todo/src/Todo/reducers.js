@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from './constants';
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO, FILTER_TODO } from './constants';
 
 export default function TodoList(state, { type, payload, id}) {
   switch (type) {
@@ -22,6 +22,10 @@ export default function TodoList(state, { type, payload, id}) {
         return item;
       }
       return item;
+    })};
+  case FILTER_TODO:
+    return {todos: state.todos.filter(item => {
+      return item.completed === true;
     })};
   default:
     return state;
