@@ -6,7 +6,6 @@ export default function TodoList(state, { type, payload, id}) {
     return {todos:[...state.todos, { name: payload, completed: false, id}]};
   case REMOVE_TODO:
     return {todos: state.todos.reduce((result, item) => {
-      console.log(result);
       if(item.id.toString() !== payload) {
         result.push(item);
       }
