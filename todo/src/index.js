@@ -8,7 +8,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './Todo/reducers';
 
-const store = createStore(reducers, {todos: []},
+const store = createStore(reducers, {todos: [], filter: false},
 compose(
    applyMiddleware(thunk),
    window.devToolsExtension ? window.devToolsExtension() : f => f
